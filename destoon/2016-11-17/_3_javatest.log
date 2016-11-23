@@ -1,0 +1,135 @@
+20:53:55,983  INFO JavaEE7Print:75 - [for (int i = 0; i < _广东省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_广东省);
+            session.save(memberPlace);
+        }]=====================
+20:53:55,999  INFO JavaEE7Print:75 - [for (int i = 0; i < _江苏省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_江苏省);
+            session.save(memberPlace);
+        }]=====================
+20:53:55,999  INFO JavaEE7Print:75 - [for (int i = 0; i < _浙江省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_浙江省);
+            session.save(memberPlace);
+        }]=====================
+20:53:55,999  INFO JavaEE7Print:75 - [for (int i = 0; i < _安徽省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_安徽省);
+            session.save(memberPlace);
+        }]=====================
+20:53:55,999  INFO JavaEE7Print:75 - [for (int i = 0; i < _福建省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_福建省);
+            session.save(memberPlace);
+        }]=====================
+20:53:55,999  INFO JavaEE7Print:75 - [for (int i = 0; i < _甘肃省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_甘肃省);
+            session.save(memberPlace);
+        }]=====================
+20:53:55,999  INFO JavaEE7Print:75 - [for (int i = 0; i < _广西.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_广西);
+            session.save(memberPlace);
+        }]=====================
+20:53:55,999  INFO JavaEE7Print:75 - [for (int i = 0; i < _贵州省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_贵州省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,014  INFO JavaEE7Print:75 - [for (int i = 0; i < _海南省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_海南省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,014  INFO JavaEE7Print:75 - [for (int i = 0; i < _河北省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_河北省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,014  INFO JavaEE7Print:75 - [for (int i = 0; i < _河南省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_河南省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _黑龙江省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_黑龙江省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _湖北省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_湖北省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _湖南省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_湖南省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _吉林省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_吉林省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _江西省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_江西省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _辽宁省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_辽宁省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _内蒙古.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_内蒙古);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _宁夏.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_宁夏);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _青海省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_青海省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _山东省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_山东省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _山西省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_山西省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _陕西省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_陕西省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,030  INFO JavaEE7Print:75 - [for (int i = 0; i < _四川省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_四川省);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,045  INFO JavaEE7Print:75 - [for (int i = 0; i < _西藏.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_西藏);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,045  INFO JavaEE7Print:75 - [for (int i = 0; i < _新疆.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_新疆);
+            session.save(memberPlace);
+        }]=====================
+20:53:56,045  INFO JavaEE7Print:75 - [for (int i = 0; i < _云南省.length; i++)
+        {
+            MemberPlace memberPlace = new MemberPlace(_云南省);
+            session.save(memberPlace);
+        }]=====================

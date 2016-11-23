@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Middle tier application context definition for the image database.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- sacn package -->
+    <!-- base, member.dao, member.service -->
+    <context:component-scan base-package="intecptor"/>
+
+    <!-- 配置代理对象 -->
+    <bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!-- 代理接口集 -->
+        <property name="proxyInterfaces">
+            <list>
+                <value>intecptor.SayService</value>
+            </list>
+        </property>
+
+        <!-- 把通知织入到代理对象  | 拦截器名集-->
+        <property name="interceptorNames">
+            <list>
+                <!-- 相当于把 MyMethodBeforeAdvice前置通知和代理对象关联起来，我们也可以把通知看成拦截器，struts2核心就是拦截器 -->
+                <value>myAfterReturningAdvice</value>
+            </list>
+        </property>
+
+        <!-- 配置被代理对象，可以指定 -->
+        <property name="target" ref="sayServiceImpl">
+
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,21 @@
+17:50:35,425  INFO JavaEE7Print:75 - [$('#tb_member').datagrid
+(
+    {
+        title: '会员管理',
+        url: '/destoon/member/listMember.com',
+        rownumbers: true,
+        width: 1024,
+        height: 800,
+        pagination: true,
+        columns://
+            [
+                [
+                    {field: 'memberID', title: 'ID', width: 200, align: 'center'},
+                    {field: 'memberName', title: '名称', width: 300, align: 'center'},
+                    {field: 'memberCompany', title: '公司', width: 300, align: 'center'},
+                    {field: 'memberGender', title: '性别', width: 200, align: 'center'},
+                    {field: 'memberGroup', title: '会员组', width: 300, align: 'center'},
+                ]
+            ]
+    }
+)]=====================

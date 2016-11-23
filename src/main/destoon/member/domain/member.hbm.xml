@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="member.domain" auto-import="true" default-lazy="false">
+
+    <class name="Member" table="destoon_member">
+        <id name="id">
+            <generator class="increment"></generator>
+        </id>
+
+        <!-- 会员组 -->
+        <!--<property name="memberGroup" not-null="true"/>-->
+        <!-- 会员登录名 -->
+        <property name="memberLoginName" not-null="true"/>
+        <!-- 昵称  -->
+        <property name="memberName"/>
+        <!-- 登录密码 -->
+        <property name="memberLoginPassword" not-null="true"/>
+        <!-- 重复输入密码 -->
+        <property name="memberLoginSurePassword" not-null="true"/>
+        <!-- Email -->
+        <property name="memberEmail" not-null="true"/>
+        <!-- 真实姓名 -->
+        <property name="memberRealName" not-null="true"/>
+        <!-- 性别 -->
+        <property name="memberGender" not-null="true">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">member.domain.MemberGender</param>
+                <param name="type">12</param>
+            </type>
+        </property>
+        <!-- 所在地区 -->
+        <!--<property name="memberPlace" not-null="true"/>-->
+        <!-- 部门 -->
+        <property name="memberDepartment"/>
+        <!-- qq -->
+        <property name="memberQQ"/>
+        <!-- 公司名称 -->
+        <property name="memberCompanyName" not-null="true"/>
+        <!-- 公司类型 -->
+        <!--<property name="memberCompanyType" not-null="true"/>-->
+        <!-- 形象图片 -->
+        <property name="memberCompanyImage"/>
+        <!-- 主营行业 -->
+        <property name="memberCompanyMainProf" not-null="true"/>
+        <!-- 主要经营范围 -->
+        <property name="memberCompanyScopeOfBusiness" not-null="true"/>
+        <!-- 经营模式 -->
+        <property name="memberCompanyMode"/>
+        <!-- 公司规模 -->
+        <property name="memberCompanySize"/>
+        <!-- 注册资本 -->
+        <property name="memberCompanyRegisterMoney"/>
+        <!-- 公司成立年份 -->
+        <property name="memberCompanyYearOfStart" not-null="true"/>
+        <!-- 公司地址 -->
+        <property name="memberCompanyAddress" not-null="true"/>
+        <!-- 邮政编码 -->
+        <property name="memberCompanyZipCode"/>
+        <!-- 公司电话 -->
+        <property name="memberCompanyTelephone" not-null="true"/>
+        <!-- 公司传真 -->
+        <property name="memberCompanyFax"/>
+        <!-- 公司email -->
+        <property name="memberCompanyEmail"/>
+        <!-- 公司网址 -->
+        <property name="memberCompanyNetWork"/>
+        <!-- 销售的产品 -->
+        <property name="memberCompanySalesProduct"/>
+        <!-- 采购的产品 -->
+        <property name="memberCompanyBuysProduct"/>
+        <!-- 公司介绍 -->
+        <property name="memberCompanyIntroduction" not-null="true" length="5000"/>
+        <!-- 会员资料是否完整 -->
+        <property name="memberIsCompleted"/>
+
+        <!-- 会员组 -->
+        <join table="join_member_group">
+            <key column="col_member_group_id1" foreign-key="fk_member_group_id1"></key>
+            <many-to-one name="memberGroup" column="col_member_group_id2"
+                         foreign-key="fk_member_group_id2"/>
+        </join>
+
+        <!-- 会员公司类型 -->
+        <join table="join_member_companyType">
+            <key column="col_member_companyType1" foreign-key="fk_member_companyType1"></key>
+            <many-to-one name="memberCompanyType" column="col_member_companyType2"
+                         foreign-key="fk_member_companyType2"/>
+        </join>
+
+        <!-- 会员地区 -->
+        <join table="join_member_place">
+            <key column="col_member_place1" foreign-key="fk_member_place1"></key>
+            <many-to-one name="memberPlace" column="col_member_place2"
+                         foreign-key="fk_member_place2"/>
+        </join>
+
+    </class>
+
+    <!-- 公司类型 -->
+    <class name="MemberCompanyType" table="destoon_memberCompanyType">
+        <id name="id">
+            <generator class="increment"/>
+        </id>
+
+        <property name="companyTypeName" length="50"></property>
+
+        <set name="memberSet" table="memberCompanyType_set" cascade="delete">
+            <key column="col_company_type_id" foreign-key="fk_company_type_id"></key>
+            <one-to-many class="Member"></one-to-many>
+        </set>
+    </class>
+
+    <!-- 会员组 -->
+    <class name="MemberGroup" table="destoon_memberGroup">
+        <id name="id">
+            <generator class="increment"/>
+        </id>
+
+        <property name="memberGroup" length="8"></property>
+
+        <set name="memberSet" table="memberGroup_set" cascade="delete">
+            <key column="col_member_group_id" foreign-key="fk_member_group_id"></key>
+            <one-to-many class="Member"></one-to-many>
+        </set>
+    </class>
+
+    <!-- 会员所在地区 -->
+    <class name="MemberPlace" table="destoon_memberPlace">
+        <id name="id">
+            <generator class="increment"/>
+        </id>
+
+        <property name="memberPlaceName" length="20"></property>
+
+        <set name="memberSet" table="memberPlace_set" cascade="delete">
+            <key column="col_member_place_id" foreign-key="fk_member_place_id"></key>
+            <one-to-many class="Member"></one-to-many>
+        </set>
+    </class>
+
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

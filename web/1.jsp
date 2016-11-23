@@ -1,0 +1,29 @@
+<ul class="clearfix">                 
+    <li><a class="d-item" data-code="5" href="javascript:;">                 "广东省",                                       </label></a></li>
+    <li><a class="d-item" data-code="6" href="javascript:;">                 "江苏省",                                       </label></a></li>
+    <li><a class="d-item" data-code="7" href="javascript:;">                 "浙江省",                                       </label></a></li>
+    <li><a class="d-item" data-code="8" href="javascript:;">                 "安徽省",                                       </label></a></li>
+    <li><a class="d-item" data-code="9" href="javascript:;">                 "福建省",                                       </label></a></li>
+    <li><a class="d-item" data-code="1" href="javascript:;">                 "甘肃省",                                       </label></a></li>
+    <li><a class="d-item" data-code="11" href="javascript:;">                 "广西",                                       </label></a></li>
+    <li><a class="d-item" data-code="12" href="javascript:;">                 "贵州省",                                       </label></a></li>
+    <li><a class="d-item" data-code="13" href="javascript:;">                 "海南省",                                       </label></a></li>
+    <li><a class="d-item" data-code="14" href="javascript:;">                 "河北省",                                       </label></a></li>
+    <li><a class="d-item" data-code="15" href="javascript:;">                 "河南省",                                       </label></a></li>
+    <li><a class="d-item" data-code="16" href="javascript:;">                 "黑龙江省",                                       </label></a></li>
+    <li><a class="d-item" data-code="17" href="javascript:;">                 "湖北省",                                       </label></a></li>
+    <li><a class="d-item" data-code="18" href="javascript:;">                 "湖南省",                                       </label></a></li>
+    <li><a class="d-item" data-code="19" href="javascript:;">                 "吉林省",                                       </label></a></li>
+    <li><a class="d-item" data-code="2" href="javascript:;">                 "江西省",                                       </label></a></li>
+    <li><a class="d-item" data-code="21" href="javascript:;">                 "辽宁省",                                       </label></a></li>
+    <li><a class="d-item" data-code="22" href="javascript:;">                 "内蒙古",                                       </label></a></li>
+    <li><a class="d-item" data-code="23" href="javascript:;">                 "宁夏",                                       </label></a></li>
+    <li><a class="d-item" data-code="24" href="javascript:;">                 "青海省",                                       </label></a></li>
+    <li><a class="d-item" data-code="25" href="javascript:;">                 "山东省",                                       </label></a></li>
+    <li><a class="d-item" data-code="26" href="javascript:;">                 "山西省",                                       </label></a></li>
+    <li><a class="d-item" data-code="27" href="javascript:;">                 "陕西省",                                       </label></a></li>
+    <li><a class="d-item" data-code="28" href="javascript:;">                 "四川省",                                       </label></a></li>
+    <li><a class="d-item" data-code="29" href="javascript:;">                 "西藏",                                       </label></a></li>
+    <li><a class="d-item" data-code="3" href="javascript:;">                 "新疆",                                       </label></a></li>
+    <li><a class="d-item" data-code="31" href="javascript:;">                 "云南省",                                       </label></a></li>
+</ul>
