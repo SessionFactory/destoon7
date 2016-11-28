@@ -13,11 +13,11 @@ import java.util.Date;
  * @since 1.7 2016-11-13
  */
 @SuppressWarnings("all")
-public final class DestoonUtils7 implements JavaEE7BaseSupport
+public class DestoonUtils7 implements JavaEE7BaseSupport
 {
     private static final long serialVersionUID = -7562706837625275482L;
 
-    public static final String log4jPath = "D:\\idea2016WK\\destoon7\\src\\resources\\log4j.properties";
+    public static final String log4jPath = "D:\\idea2016WK\\github\\destoon7\\src\\resources\\log4j.properties";
 
     /**
      * 配置文件路径

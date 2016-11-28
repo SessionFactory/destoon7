@@ -12,6 +12,8 @@ import qin.javaee7.core.JavaEE7BaseSupport;
 @SuppressWarnings("all")
 public class MemberUtils implements JavaEE7BaseSupport
 {
+    //region 检查用户是否可以登录
+
     /**
      * 会员工具类(检查会员里的字段是否符合要求)
      *
@@ -49,6 +51,7 @@ public class MemberUtils implements JavaEE7BaseSupport
 
         return msg;
     }
+    //endregion
 }
 
 

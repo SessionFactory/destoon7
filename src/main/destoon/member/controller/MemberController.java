@@ -112,7 +112,7 @@ public class MemberController extends JavaEE7BaseController
                 String ajaxMsg = memberService.doMemberLogin(vo);
                 //记录登录时间
                 String loginTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-                returnJson(ajaxMsg + "登录时间:" + loginTime, response);
+                returnJson(ajaxMsg, response);
                 actionFlag = true;
                 return ajaxMsg;
             }
@@ -228,6 +228,9 @@ public class MemberController extends JavaEE7BaseController
             doCheck(actionFlag);
         }
     }
+    //endregion
+
+    //region 新增会员
     //endregion
 
     //endregion

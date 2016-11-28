@@ -4,118 +4,8 @@
 <head>
     <title>主页</title>
     <jsp:include page="/include/include_easyui15.jsp"></jsp:include>
+    <script type="text/javascript" src="<c:url value="/WEB-INF/jsp/destoon/member/js/member.index.js"/> "></script>
 </head>
-
-<script type="text/javascript">
-    $(function ()
-            {
-                //region 初始化会员表格
-                $('#tb_memberDetails').datagrid
-                (
-                        {
-                            toolbar: '#toolbar_member',
-                            title: '会员管理',
-                            rownumbers: true,
-                            width: 1500,
-                            height: 200,
-                            pagination: true,
-                            columns://
-                                    [
-                                        [
-                                            {field: 'memberID', title: 'ID', width: 200, align: 'center'},
-                                            {field: 'memberName', title: '名称', width: 300, align: 'center'},
-                                            {field: 'memberCompany', title: '公司', width: 200, align: 'center'},
-                                            {field: 'memberGender', title: '性别', width: 200, align: 'center'},
-                                            {field: 'memberGroup', title: '会员组', width: 300, align: 'center'}
-                                        ]
-                                    ],
-                            //单选
-                            singleSelect: true
-                        }
-                );
-                //endregion
-
-                //region 初始化对话框
-                $('#dlg_memberDetails').dialog
-                (
-                        {
-                            title: '会员详细信息',
-                            width: 1360,
-                            height: 600,
-                            closed: true,
-                            modal: true
-                        }
-                );
-                //endregion
-            }
-    );
-
-    //region 初始化会员信息表格
-    /** 初始化会员信息表格 */
-    function iniMemberTable()
-    {
-        $('#tb_memberDetails').datagrid
-        (
-                {
-                    url: '/destoon/member/listMember.com'
-                }
-        );
-    }
-    //endregion
-
-    function iniMemberData()
-    {
-        $.ajax
-        (
-                {
-                    url: "/destoon/member/iniMemberData.com",
-                    method: 'POST',
-                    success: function (msg)
-                    {
-                        alert("数据恢复成功!");
-                    }
-                }
-        );
-    }
-
-    //region 显示详细信息
-    /**
-     * 显示详细信息
-     */
-    function showMemberDetails()
-    {
-        //必须选中datagrid中的一行数据才能查询详细信息
-        //首先判断是否选中
-        var row = $('#tb_memberDetails').datagrid('getSelected');
-
-        //没有选中
-        if (row == null)
-        {
-            $.messager.alert('错误', '请先选中表格中的任意一条数据再查看详细信息');
-        }
-        else
-        {
-            //获取选中的id
-            var id = row.memberID;
-            console.log(id);
-
-            //查找
-            $.ajax
-            (
-                    {
-                        url:'/destoon/showMemberDetails.com?memberID='+id,
-                        method:'POST',
-                        success:function(msg) {
-                            $('#_bigDIV').append(msg);
-                        }
-                    }
-            );
-
-            $('#dlg_memberDetails').dialog('open');
-        }
-    }
-    //endregion
-</script>
 
 <body class="easyui-layout">
 <div data-options="region:'west',title:'菜单',split:true" style="width:200px;">
@@ -146,6 +36,7 @@
 
     <div id="tt" class="easyui-tabs" style="width:100%;height:100%">
         <div title="添加会员" style="padding:20px;display:none;">
+            <jsp:include page="member/pages/addMember.jsp"></jsp:include>
         </div>
         <div title="会员列表" data-options="closable:false" style="overflow:auto;padding:20px;display:none;">
             <table id="tb_memberDetails"></table>
@@ -164,12 +55,6 @@
     <a class="easyui-linkbutton" data-options="iconCls:'icon-help'" onclick="showMemberDetails()">详细信息</a>
 </div>
 <!-- toolbar -->
-
-<!-- dialog -->
-<div id="dlg_memberDetails">
-    <jsp:include page="member/pages/memberDetails.jsp"></jsp:include>
-</div>
-<!-- dialog -->
 
 </body>
 

@@ -77,158 +77,19 @@ public class MemberIndexController extends JavaEE7BaseController
     /**
      * 显示详细信息
      *
-     * @param request
-     * @param response
+     * @return
      */
-    @RequestMapping(value = "/showMemberDetails")
-    public void showMemberDetails(HttpServletRequest request, HttpServletResponse response)
+    @RequestMapping(value = "/showDetails")
+    public ModelAndView showDetails(HttpServletRequest request, HttpServletResponse response)
     {
-        Long memberID = Long.valueOf(request.getParameter("memberID").trim());
-        Member member = memberService.findMember(memberID);
+        Member member = memberService.findMember(Long.valueOf(request.getParameter("memberID").trim()));
 
-        //language=HTML
-        String html = "    <br>\n" +
-                  "    <div class=\"easyui-panel\" id=\"_panel\" title=\"会员资料\" style=\"width:100%;\">\n" +
-                  "        <table width=\"100%\" border=\"1\" bordercolor=\"#663300\"\n" +
-                  "               style=\"background-color:#F0F2F7; font-family:微软雅黑;\">\n" +
-                  "            <tr>\n" +
-                  "                <td rowspan=\"7\" style=\"width: 300px;\">\n" +
-                  "                    <img src=\"/images/1.jpg\" alt=\"\" style=\"width: 300px;\">\n" +
-                  "                </td>\n" +
-                  "                <td id=\"tb_memberDetails\">会员名</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #2e004b;\">"+member.getMemberName()+"</font>\n" +
-                  "                </td>\n" +
-                  "                <td id=\"tb_memberDetails\">会员真实姓名</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #000000;\">"+member.getMemberRealName()+"</font>\n" +
-                  "                </td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">会员登录名</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #761c19;\">"+member.getMemberLoginName()+"</font>\n" +
-                  "                </td>\n" +
-                  "                <td id=\"tb_memberDetails\">会员性别</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #31708f;\">"+member.getMemberGender().toString()+"</font>\n" +
-                  "                </td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">会员昵称</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #063c03;\">"+member.getMemberName()+"</font>\n" +
-                  "                </td>\n" +
-                  "                <td id=\"tb_memberDetails\">会员所在地区</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #da0007;\">"+member.getMemberPlace().getMemberPlaceName()+"</font>\n" +
-                  "                </td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">会员email</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #f05f7e;\">"+member.getMemberEmail()+"</font>\n" +
-                  "                </td>\n" +
-                  "                <td id=\"tb_memberDetails\">会员所在部门</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #134C10;\">"+member.getMemberDepartment()+"</font>\n" +
-                  "                </td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">会员qq</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: #ce187e;\">"+member.getMemberQQ()+"</font>\n" +
-                  "                </td>\n" +
-                  "            </tr>\n" +
-                  "        </table>\n" +
-                  "    </div>\n" +
-                  "\n" +
-                  "    <div class=\"easyui-panel\" id=\"_panel2\" title=\"公司资料\" style=\"width:100%;\">\n" +
-                  "        <table width=\"100%\" bordercolor=\"#663300\" border=\"1\"\n" +
-                  "               style=\"background-color:#F0F2F7; font-family:微软雅黑;\">\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">公司主页</td>\n" +
-                  "                <td>\n" +
-                  "                    <font style=\"color: blue;\"></font>\n" +
-                  "                </td>\n" +
-                  "                <td>&nbsp;</td>\n" +
-                  "                <td>&nbsp;</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">公司名</td>\n" +
-                  "                <td>"+member.getMemberCompanyName()+"</td>\n" +
-                  "                <td id=\"tb_memberDetails\">主营范围</td>\n" +
-                  "                <td>"+member.getMemberCompanyScopeOfBusiness()+"</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">经营模式</td>\n" +
-                  "                <td>"+member.getMemberCompanyMode()+"</td>\n" +
-                  "                <td id=\"tb_memberDetails\">公司规模</td>\n" +
-                  "                <td>&nbsp;</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">注册资本</td>\n" +
-                  "                <td>"+member.getMemberCompanySize()+"</td>\n" +
-                  "                <td id=\"tb_memberDetails\">公司所在地</td>\n" +
-                  "                <td>"+member.getMemberPlace()+"</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">成立年份</td>\n" +
-                  "                <td>"+member.getMemberCompanyYearOfStart().toString()+"</td>\n" +
-                  "                <td id=\"tb_memberDetails\">采购的产品</td>\n" +
-                  "                <td>"+member.getMemberCompanyBuysProduct()+"</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">销售的产品</td>\n" +
-                  "                <td>"+member.getMemberCompanySalesProduct()+"</td>\n" +
-                  "                <td id=\"tb_memberDetails\">公司类型</td>\n" +
-                  "                <td>&nbsp;</td>\n" +
-                  "            </tr>\n" +
-                  "        </table>\n" +
-                  "    </div>\n" +
-                  "\n" +
-                  "    <div class=\"easyui-panel\" id=\"_panel3\" title=\"联系方式\" style=\"width:100%;\">\n" +
-                  "        <table width=\"100%\" border=\"1\" bordercolor=\"#9933FF\"\n" +
-                  "               style=\"background-color:#F0F2F7; font-family:微软雅黑;\">\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">姓名</td>\n" +
-                  "                <td>name</td>\n" +
-                  "                <td id=\"tb_memberDetails\">手机</td>\n" +
-                  "                <td>mobile</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">部门</td>\n" +
-                  "                <td>department</td>\n" +
-                  "                <td id=\"tb_memberDetails\">职位</td>\n" +
-                  "                <td>job</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">电话</td>\n" +
-                  "                <td>phone</td>\n" +
-                  "                <td id=\"tb_memberDetails\">传真</td>\n" +
-                  "                <td>fax</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">email</td>\n" +
-                  "                <td>email</td>\n" +
-                  "                <td id=\"tb_memberDetails\">qq</td>\n" +
-                  "                <td>qq</td>\n" +
-                  "            </tr>\n" +
-                  "            <tr>\n" +
-                  "                <td id=\"tb_memberDetails\">邮编</td>\n" +
-                  "                <td>zipcode</td>\n" +
-                  "            </tr>\n" +
-                  "        </table>\n" +
-                  "    </div>\n" +
-                  "    <br>";
+        request.setAttribute("member", member);
 
-        returnJson(html, response);
+        return new ModelAndView("/destoon/showDetails");
     }
     //endregion
 }
-
-
-
 
 
 

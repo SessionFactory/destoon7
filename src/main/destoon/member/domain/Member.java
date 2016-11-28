@@ -594,4 +594,44 @@ public class Member implements SuperDestoonEntity<Long>
         this.memberIsCompleted = memberIsCompleted;
     }
     //endregion
+
+    //region toString()
+
+    @Override
+    public String toString()
+    {
+        final StringBuilder sb = new StringBuilder("Member{");
+        sb.append("id=").append(id);
+        sb.append(", memberLoginName='").append(memberLoginName).append('\'');
+        sb.append(", memberName='").append(memberName).append('\'');
+        sb.append(", memberLoginPassword='").append(memberLoginPassword).append('\'');
+        sb.append(", memberLoginSurePassword='").append(memberLoginSurePassword).append('\'');
+        sb.append(", memberEmail='").append(memberEmail).append('\'');
+        sb.append(", memberRealName='").append(memberRealName).append('\'');
+        sb.append(", memberGender=").append(memberGender);
+        sb.append(", memberDepartment='").append(memberDepartment).append('\'');
+        sb.append(", memberQQ=").append(memberQQ);
+        sb.append(", memberCompanyName='").append(memberCompanyName).append('\'');
+        sb.append(", memberCompanyImage='").append(memberCompanyImage).append('\'');
+        sb.append(", memberCompanyMainProf='").append(memberCompanyMainProf).append('\'');
+        sb.append(", memberCompanyScopeOfBusiness='").append(memberCompanyScopeOfBusiness).append('\'');
+        sb.append(", memberCompanyMode='").append(memberCompanyMode).append('\'');
+        sb.append(", memberCompanySize='").append(memberCompanySize).append('\'');
+        sb.append(", memberCompanyRegisterMoney=").append(memberCompanyRegisterMoney);
+        sb.append(", memberCompanyYearOfStart=").append(memberCompanyYearOfStart);
+        sb.append(", memberCompanyAddress='").append(memberCompanyAddress).append('\'');
+        sb.append(", memberCompanyZipCode=").append(memberCompanyZipCode);
+        sb.append(", memberCompanyTelephone='").append(memberCompanyTelephone).append('\'');
+        sb.append(", memberCompanyFax='").append(memberCompanyFax).append('\'');
+        sb.append(", memberCompanyEmail='").append(memberCompanyEmail).append('\'');
+        sb.append(", memberCompanyNetWork='").append(memberCompanyNetWork).append('\'');
+        sb.append(", memberCompanySalesProduct='").append(memberCompanySalesProduct).append('\'');
+        sb.append(", memberCompanyBuysProduct='").append(memberCompanyBuysProduct).append('\'');
+        sb.append(", memberCompanyIntroduction='").append(memberCompanyIntroduction).append('\'');
+        sb.append(", memberIsCompleted=").append(memberIsCompleted);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    //endregion
 }

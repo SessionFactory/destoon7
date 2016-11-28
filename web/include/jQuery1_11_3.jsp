@@ -9,3 +9,21 @@
 <script type="text/javascript">
     var destoonBasePath = "/destoon/";
 </script>
+
+<%-- 模板代码 --%>
+
+<%--
+<%@ page import="org.hibernate.Session" %>
+<%@ page import="org.hibernate.SessionFactory" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+
+<%
+    /** Session工厂 */
+    SessionFactory hbSessionFactory = (SessionFactory) new
+            ClassPathXmlApplicationContext("applicationContext.xml")
+            .getBean("sessionFactory");
+    /** 开启Session */
+    Session hbSession = hbSessionFactory.openSession();
+
+%>
+--%>

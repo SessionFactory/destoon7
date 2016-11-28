@@ -9,5 +9,8 @@
     #_container
     {
         font-family: 微软雅黑;
+        width: 100%;
+        font-size: 16px;
+        font-weight: bold;
     }
 </style>

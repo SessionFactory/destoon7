@@ -98,25 +98,53 @@
         var memberLoginPassword = $('#memberLoginPassword').val();
 
         var loginURL = login + "doLogin.com?memberLoginName=" + memberLoginName +
-                "       &&memberEmail=" + memberEmail +
-                "       &&memberLoginPassword=" + memberLoginPassword;
+            "       &&memberEmail=" + memberEmail +
+            "       &&memberLoginPassword=" + memberLoginPassword;
 
         //ajax方式提交请求
         $.ajax
         (
+            {
+                url: loginURL,
+                method: 'POST',
+                success: function (msg)
                 {
-                    url: loginURL,
-                    method: 'POST',
-                    success: function (msg)
+                    if (msg.substring(0, 7) == "success")
                     {
-                        if (msg == "success") {
-                            alert ("登录成功");
-                            window.location.href="/destoon/bs/memberIndex.com";
-                        } else {
-                            alert ("登录失败");
-                        }
+                        var lastLoginTime = msg.substring(12, msg.length);
+
+                        window.location.href = "/destoon/index.com?lastLoginTime=" + lastLoginTime +
+                            "       &&memberLoginName=" + memberLoginName;
+
+                        //region annotation
+                        //                            var indexURL = "/destoon/index.com?lastLoginTime=" + lastLoginTime;
+                        //
+                        //                            $.ajax
+                        //                            (
+                        //                                    {
+                        //                                        url: indexURL,
+                        //                                        method: 'POST',
+                        //                                        success: function (msg)
+                        //                                        {
+                        //                                            if (msg == "success")
+                        //                                            {
+                        //                                            }
+                        //                                            else
+                        //                                            {
+                        //                                                alert("请先登录destoon系统!");
+                        //                                                return;
+                        //                                            }
+                        //                                        }
+                        //                                    }
+                        //                            );
+                        //endregion
+                    }
+                    else
+                    {
+                        alert(msg);
                     }
                 }
+            }
         );
     }
     //endregion

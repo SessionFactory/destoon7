@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/resources"/>
+	<classpathentry kind="src" path="src/main/destoon/buying"/>
+	<classpathentry kind="src" path="src/main/destoon/data"/>
+	<classpathentry kind="src" path="src/main/destoon/news"/>
+	<classpathentry kind="src" path="src/main/destoon/video"/>
+	<classpathentry kind="src" path="src/main/destoon/test"/>
+	<classpathentry kind="src" path="src/main/destoon/buys"/>
+	<classpathentry kind="src" path="src/main/destoon"/>
+	<classpathentry kind="src" path="src/main/spring"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/libs"/>
+	<classpathentry kind="lib" path="lib/junit-4.12.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Tomcat 7.0.64"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="true">
+	<output-test url="file://$MODULE_DIR$/../out/destoon7/default/test/destoon7"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/main/destoon/test"/>
+	</contentEntry>
+	<lib name="JUnit4" scope="TEST">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hamcrest-core-1.3.jar!/"/>
+	</lib>
+	<lib name="Tomcat 7.0.64" scope="PROVIDED"/>
+	<levels>
+		<level name="libs" value="project"/>
+		<level name="Tomcat 7.0.64" value="application_server_libraries"/>
+	</levels>
+</component>
